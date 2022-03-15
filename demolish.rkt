@@ -45,13 +45,14 @@
 
 ;; BuildingStatus -> Bool
 ;; check if building should be torn down
-(check-expect (demolish? "new") "false")
-(check-expect (demolish? "old") "true")
-(check-expect (demolish? "heritage") "false")
+(check-expect (demolish? "new") #f)
+(check-expect (demolish? "old") #t)
+(check-expect (demolish? "heritage") #f)
 
 (define (demolish? building)
-  (cond [(string=? building oldBuilding) "true"]
-        [else "false"]))
+  (cond [(string=? building oldBuilding) #t]
+        [else #f]))
+
 
 
 
