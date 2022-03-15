@@ -50,8 +50,7 @@
 (check-expect (demolish? "heritage") #f)
 
 (define (demolish? building)
-  (cond [(string=? building oldBuilding) #t]
-        [else #f]))
+  (string=? building oldBuilding))
 
 
 
